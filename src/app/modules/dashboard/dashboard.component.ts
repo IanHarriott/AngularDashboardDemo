@@ -1,29 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
-import { MatTableDataSource, MatPaginator } from '@angular/material';
-
-@Component({
-    selector: 'app-dashboard',
-    templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.scss'],
-})
-export class DashboardComponent implements OnInit {
-    bigChart = [];
-    cards = [];
-    pieChart = [];
-    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-    dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
-    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-    constructor(private dashboardService: DashboardService) {}
-
-    ngOnInit() {
-        this.bigChart = this.dashboardService.bigChart();
-        this.cards = this.dashboardService.cards();
-        this.pieChart = this.dashboardService.pieChart();
-        this.dataSource.paginator = this.paginator;
-    }
-}
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface PeriodicElement {
     name: string;
@@ -54,3 +32,26 @@ const ELEMENT_DATA: PeriodicElement[] = [
     { position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K' },
     { position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca' },
 ];
+
+@Component({
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.scss'],
+})
+export class DashboardComponent implements OnInit {
+    bigChart = [];
+    cards = [];
+    pieChart = [];
+    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+    dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+
+    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+    constructor(private dashboardService: DashboardService) {}
+
+    ngOnInit() {
+        this.bigChart = this.dashboardService.bigChart();
+        this.cards = this.dashboardService.cards();
+        this.pieChart = this.dashboardService.pieChart();
+        this.dataSource.paginator = this.paginator;
+    }
+}

@@ -1,5 +1,11 @@
 # Dashboard
 
+## Dashboard picture 1
+![Image of Dashboard 1](https://i.gyazo.com/faffbc24b4c5e5b85048c14d936c05c4.png)
+
+## Dashboard picture 2
+![Image of Dashboard 2](https://i.gyazo.com/1cf64f40b684df45ffb23611b30ca5f2.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
 
 ## Development server

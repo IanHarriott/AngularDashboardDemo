@@ -4,14 +4,12 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import {
-    MatDividerModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatListModule,
-} from '@angular/material';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AreaComponent } from './widgets/area/area.component';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -30,7 +28,7 @@ import { PieComponent } from './widgets/pie/pie.component';
         MatMenuModule,
         MatListModule,
         RouterModule,
-        HighchartsChartModule
+        HighchartsChartModule,
     ],
     exports: [HeaderComponent, FooterComponent, SidebarComponent, AreaComponent, CardComponent, PieComponent],
 })
